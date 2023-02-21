@@ -9,7 +9,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: black;
+	background: url("space.jpg");
 	overflow: hidden;
 }
 
@@ -51,7 +51,26 @@ body{
 	box-shadow: -10px 10px rgba(0,0,0,0.05);
 	transform-style: preserve-3d;
 	perspective: 800px;
-	z-index: 10;		
+	z-index: 10;
+	animation: animate_police 3s linear infinite;		
+}
+
+@keyframes animate_police{
+	0%{
+		transform: translateX(20px) translateY(-50px);
+	}
+	25%{
+		transform: translateX(20px) translateY(0px);
+	}
+	50%{
+		transform: translateX(20px) translateY(50px);
+	}
+	75%{
+		transform: translateX(-10px) translateY(0px);
+	}
+	100%{
+		transform: translateX(20px) translateY(-50px);
+	}
 }
 
 .police::before{
@@ -64,4 +83,164 @@ body{
 	border-radius: 2px;
 	background: red;
 	box-shadow: 0 42px red;
+}
+
+.police::after{
+	content: '';
+	position: absolute;
+	top: 10px;
+	right: 2px;
+	width: 6px;
+	height: 16px;
+	border-radius: 2px;
+	background: white;
+	box-shadow: 0 44px white;
+}
+
+.police span{
+	position: absolute;
+	inset: 5px 10px;
+	background: #475b66;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.police span::before{
+	content: '777';
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translate(-50%, -50%) rotate(90deg);
+	color: white;
+	font-size: 20px;
+	font-weight: 1000;
+	letter-spacing: 0.1em;
+}
+
+.police span::after{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+	z-index: 100;
+	width: 6px;
+	height: 10px;
+	background: #29282b;
+	box-shadow: 0 -10px #1f5fff, 0 10px red;
+}
+
+.police span b{
+	position: absolute;
+	inset: 0 30px;
+	background: #344650;
+	border-radius: 10px;
+}
+
+.police span b::before{
+	content: '';
+	position: absolute;
+	inset: 6px 25px;
+	background: #ebebeb;
+	border-radius: 10px;
+}
+
+.police span b::after{
+	content: '';
+	position: absolute;
+	inset: 0 58px;
+	background: #ebebeb;
+}
+
+.police span i{
+	position: absolute;
+	inset: 0;
+}
+
+.police span i::before{
+	content: '';
+	position: absolute;
+	top: 7px;
+	left: 20px;
+	width: 40px;
+	height: 5px;
+	background: #ebebeb;
+	transform-origin: right;
+	transform: rotate(15deg);
+	box-shadow: 100px 34px #ebebeb;
+}
+
+.police span i::after{
+	content: '';
+	position: absolute;
+	bottom:7px;
+	left: 20px;
+	width: 40px;
+	height: 5px;
+	background: #ebebeb;
+	transform-origin: right;
+	transform: rotate(-15deg);
+	box-shadow: 100px -34px #ebebeb;
+}
+
+.light_beam{
+	position: absolute;
+	top: 5px;
+	right: -2px;
+	width: 10px;
+	height: 70px;
+	background: #000;
+	border-radius: 15px;
+	transform-style: preserve-3d;
+}
+
+.light_beam::before{
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 150px;
+	height: 16px;
+	background: linear-gradient(90deg, #fff6, transparent);
+	transform-origin: left;
+	transform: perspective(500px) rotateY(-50deg);
+}
+
+.light_beam::after{
+	content: '';
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	width: 150px;
+	height: 16px;
+	background: linear-gradient(90deg, #fff6, transparent);
+	transform-origin: left;
+	transform: perspective(500px) rotateY(-50deg);
+}
+
+.police .side_mirror{
+	position: absolute;
+	inset: 0;
+}
+
+.police .side_mirror::before{
+	content: '';
+	position: absolute;
+	top: -8px;
+	right: 40px;
+	width: 5px;
+	height: 10px;
+	background: white;
+	border-top-right-radius: 10px;
+}
+
+.police .side_mirror::after{
+	content: '';
+	position: absolute;
+	bottom: -8px;
+	right: 40px;
+	width: 5px;
+	height: 10px;
+	background: white;
+	border-bottom-right-radius: 10px;
 }
